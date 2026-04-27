@@ -1,61 +1,386 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomy Local | 次世代の自立分散型ローカルネットワーク</title>
-    <meta name="description" content="Autonomy Localは、地域社会の自律性を高めるためのデジタル基盤を提供します。">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+<html class="scroll-smooth" lang="ja">
 
-    <header>
-        <div class="container nav">
-            <div class="logo">AUTONOMY LOCAL</div>
-            <nav>
-                <!-- Navigation links could go here -->
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Autonomy Association, LLC. | 自律型インフラ・データ基盤</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "outline-variant": "#e6bdb8",
+                        "on-surface-variant": "#5c403c",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#f3f8ff",
+                        "primary": "#b70011",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-container": "#dae2fd",
+                        "surface-tint": "#bf0715",
+                        "on-tertiary-fixed": "#001e30",
+                        "secondary": "#565e74",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#90cdff",
+                        "on-primary-fixed-variant": "#93000b",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#dc2626",
+                        "surface-container-high": "#e6e8ea",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed": "#410002",
+                        "on-primary-container": "#fff6f5",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "inverse-primary": "#ffb4ab",
+                        "outline": "#916f6b",
+                        "surface-dim": "#d8dadc",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#0078b2",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-bright": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#cbe6ff",
+                        "primary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary": "#005e8d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans", "Noto Sans JP", "sans-serif"],
+                        "body": ["Inter", "Noto Sans JP", "sans-serif"],
+                        "label": ["Space Grotesk", "monospace"]
+                    },
+                    backgroundImage: {
+                        'blueprint-grid': `linear-gradient(to right, rgba(230, 189, 184, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(230, 189, 184, 0.2) 1px, transparent 1px)`
+                    },
+                    backgroundSize: {
+                        'blueprint': '40px 40px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blueprint-pattern {
+            background-image: linear-gradient(to right, rgba(230, 189, 184, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(230, 189, 184, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .ghost-border-bottom {
+            border-bottom: 1px solid rgba(230, 189, 184, 0.2);
+        }
+
+        .ghost-border-top {
+            border-top: 1px solid rgba(230, 189, 184, 0.2);
+        }
+
+        .tech-gradient {
+            background: linear-gradient(135deg, #b70011, #dc2626);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body antialiased blueprint-pattern selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header
+        class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md full-width top-0 sticky z-50 border-b border-red-900/20 shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="w-8 h-8 tech-gradient flex items-center justify-center rounded-sm">
+                    <span class="font-label font-bold text-on-primary text-lg leading-none tracking-tighter">A</span>
+                </div>
+                <span class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white font-headline">Autonomy
+                    Association, LLC.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-600 font-label uppercase tracking-widest text-xs transition-colors duration-300"
+                    href="#service">SERVICE</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-600 font-label uppercase tracking-widest text-xs transition-colors duration-300"
+                    href="#company">COMPANY</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-600 font-label uppercase tracking-widest text-xs transition-colors duration-300"
+                    href="#contact">CONTACT</a>
             </nav>
+            <a class="hidden md:inline-flex items-center justify-center tech-gradient text-on-primary font-label uppercase text-xs tracking-widest px-6 py-3 rounded-sm transition-all hover:opacity-90"
+                href="#contact">
+                GET IN TOUCH
+            </a>
+            <button class="md:hidden text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
         </div>
     </header>
-
     <main>
-        <section class="hero">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            
-            <div class="container hero-content fade-in">
-                <h1>未来を自らの手で、<br>地域から。</h1>
-                <p>私たちは、テクノロジーを通じてコミュニティのレジリエンスを強化し、<br>真に自律したローカル経済の創出を目指しています。</p>
-                <div class="cta">
-                    <a href="#" class="btn btn-primary">プロジェクトを見る</a>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-24 px-6 max-w-screen-2xl mx-auto min-h-[716px] flex flex-col justify-center">
+            <div class="max-w-4xl">
+                <p class="font-label text-primary text-sm uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <span class="w-2 h-2 tech-gradient rounded-full inline-block"></span>
+                    SYSTEM STATUS: ACTIVE
+                </p>
+                <h1
+                    class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-secondary-fixed leading-tight mb-8">
+                    Autonomy<br />Association, LLC.
+                </h1>
+                <p
+                    class="font-headline text-2xl md:text-3xl text-secondary font-medium tracking-tight border-l-4 border-primary pl-6">
+                    自律型インフラ・データ基盤
+                </p>
+                <div class="mt-16 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                    <a class="tech-gradient text-on-primary font-label uppercase text-sm tracking-widest px-8 py-4 rounded-sm flex items-center gap-2 hover:opacity-90 transition-opacity"
+                        href="#service">
+                        Explore Infrastructure
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                    <div class="flex items-center gap-4 text-secondary font-label text-xs">
+                        <span>VERSION: 2025.1</span>
+                        <span class="ghost-border-bottom w-12 h-0"></span>
+                        <span>HIROSHIMA, JP</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Abstract Blueprint Graphic -->
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-10 hidden lg:block pointer-events-none"
+                style="background-image: repeating-linear-gradient(45deg, #b70011 0, #b70011 1px, transparent 1px, transparent 10px);">
+            </div>
+        </section>
+        <!-- Service Section -->
+        <section class="py-24 px-6 bg-surface-container-lowest ghost-border-top ghost-border-bottom relative"
+            id="service">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="flex items-end justify-between mb-16 ghost-border-bottom pb-8">
+                    <div>
+                        <h2 class="font-headline text-3xl font-bold tracking-tight text-on-secondary-fixed">Core
+                            Services</h2>
+                        <p class="text-secondary mt-2">事業内容・サービス仕様</p>
+                    </div>
+                    <span class="font-label text-secondary text-sm hidden md:block">SEC_01</span>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-1 lg:gap-8 bg-surface-container-low p-1 lg:p-0 lg:bg-transparent">
+                    <!-- Service Card 1 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 relative group transition-all duration-300 hover:shadow-[0_20px_40px_-10px_rgba(19,27,46,0.08)]">
+                        <div class="absolute top-4 right-4 font-label text-xs text-secondary">[SERVICE_01]</div>
+                        <div
+                            class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8">
+                            <span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold mb-4">地域データ基盤の構築</h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            地域社会におけるデータの自律的な管理と流通を実現するインフラストラクチャの設計・構築。堅牢性と拡張性を兼ね備えたアーキテクチャを提供。
+                        </p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 relative group transition-all duration-300 hover:shadow-[0_20px_40px_-10px_rgba(19,27,46,0.08)]">
+                        <div class="absolute top-4 right-4 font-label text-xs text-secondary">[SERVICE_02]</div>
+                        <div
+                            class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="shield_person">shield_person</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold mb-4">DID / VC 導入支援</h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            分散型ID（Decentralized Identifiers）および検証可能なクレデンシャル（Verifiable Credentials）技術の社会実装を技術面からサポート。
+                        </p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 relative group transition-all duration-300 hover:shadow-[0_20px_40px_-10px_rgba(19,27,46,0.08)]">
+                        <div class="absolute top-4 right-4 font-label text-xs text-secondary">[SERVICE_03]</div>
+                        <div
+                            class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8">
+                            <span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold mb-4">ソフトウェア開発</h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            自律型インフラを支える高度なソフトウェア要件の定義から実装まで。オープンスタンダードに基づく持続可能なシステム開発。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Company Section -->
+        <section class="py-24 px-6 relative" id="company">
+            <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/3">
+                    <div class="sticky top-32">
+                        <h2 class="font-headline text-3xl font-bold tracking-tight text-on-secondary-fixed mb-2">Company
+                            Profile</h2>
+                        <p class="text-secondary mb-8">企業情報</p>
+                    </div>
+                </div>
+                <div
+                    class="lg:w-2/3 bg-surface-container-lowest shadow-[0_20px_40px_-10px_rgba(19,27,46,0.08)] rounded-sm overflow-hidden">
+                    <div class="p-8 ghost-border-bottom bg-surface-container-low flex justify-between items-center">
+                        <span class="font-label text-xs text-secondary uppercase tracking-widest">Entity Specs</span>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            <span class="font-label text-xs text-secondary">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <table class="w-full text-left border-collapse">
+                            <tbody>
+                                <tr class="ghost-border-bottom">
+                                    <th
+                                        class="py-6 font-label text-xs text-secondary uppercase tracking-widest w-1/3 align-top">
+                                        Company Name</th>
+                                    <td class="py-6 font-headline font-semibold text-on-secondary-fixed">
+                                        合同会社オートノミーアソシエーション<br />
+                                        <span class="text-sm text-secondary font-normal mt-1 block">Autonomy
+                                            Association, LLC.</span>
+                                    </td>
+                                </tr>
+                                <tr class="ghost-border-bottom">
+                                    <th
+                                        class="py-6 font-label text-xs text-secondary uppercase tracking-widest align-top">
+                                        Representative</th>
+                                    <td class="py-6 font-headline text-on-secondary-fixed">
+                                        代表社員 <span class="font-semibold ml-2">山下 健吾</span>
+                                    </td>
+                                </tr>
+                                <tr class="ghost-border-bottom">
+                                    <th
+                                        class="py-6 font-label text-xs text-secondary uppercase tracking-widest align-top">
+                                        Address</th>
+                                    <td class="py-6 text-on-secondary-fixed text-sm leading-relaxed">
+                                        〒738-0042<br />
+                                        広島県廿日市市地御前5丁目15-10
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th
+                                        class="py-6 font-label text-xs text-secondary uppercase tracking-widest align-top">
+                                        Founded</th>
+                                    <td class="py-6 font-label text-on-secondary-fixed">
+                                        2025/4/1
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="py-24 px-6 bg-on-secondary-fixed text-white relative overflow-hidden" id="contact">
+            <!-- Decorative Tech Grid -->
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+            <div class="max-w-3xl mx-auto text-center relative z-10">
+                <span class="font-label text-primary-fixed-dim text-sm inline-block mb-6">SEC_03 //
+                    COMMUNICATION_CHANNEL</span>
+                <h2 class="font-headline text-4xl font-bold tracking-tight mb-8">Initiate Contact</h2>
+                <p class="text-secondary-fixed-dim mb-12 max-w-lg mx-auto">
+                    インフラストラクチャ・データ基盤の構築に関するご相談、または弊社へのお問い合わせは、以下のフォームよりご連絡ください。
+                </p>
+                <div
+                    class="bg-surface-container-lowest/5 backdrop-blur-md border border-white/10 p-8 rounded-sm text-left">
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="font-label text-xs text-secondary-fixed-dim block mb-2">NAME /
+                                    ORGANIZATION</label>
+                                <input
+                                    id="form-name"
+                                    class="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-fixed-dim focus:ring-0 text-white placeholder-white/30 px-0 py-2 transition-colors font-body text-sm"
+                                    placeholder="John Doe / Example Corp" type="text" required />
+                            </div>
+                            <div>
+                                <label
+                                    class="font-label text-xs text-secondary-fixed-dim block mb-2">EMAIL_ADDRESS</label>
+                                <input
+                                    id="form-email"
+                                    class="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-fixed-dim focus:ring-0 text-white placeholder-white/30 px-0 py-2 transition-colors font-label text-sm"
+                                    placeholder="user@domain.com" type="email" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="font-label text-xs text-secondary-fixed-dim block mb-2">MESSAGE_PAYLOAD</label>
+                            <textarea
+                                id="form-message"
+                                class="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-fixed-dim focus:ring-0 text-white placeholder-white/30 px-0 py-2 transition-colors font-body text-sm resize-none"
+                                placeholder="Enter your inquiry..." rows="4" required></textarea>
+                        </div>
+                        <div class="pt-4 flex justify-end">
+                            <button
+                                class="tech-gradient text-on-primary font-label uppercase text-sm tracking-widest px-8 py-3 rounded-sm flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                type="submit">
+                                TRANSMIT
+                                <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Autonomy Local. Built for the future.</p>
-        </div>
-    </footer>
-
     <script>
-        // Simple entry animation trigger
-        document.addEventListener('DOMContentLoaded', () => {
-            const content = document.querySelector('.hero-content');
-            content.style.opacity = '0';
-            setTimeout(() => {
-                content.classList.add('fade-in');
-                content.style.opacity = '1';
-            }, 100);
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const message = document.getElementById('form-message').value;
+            
+            const subject = encodeURIComponent(`Inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            // Replace with your actual inquiry email address
+            const mailToLink = `mailto:info@autonomy-association.co.jp?subject=${subject}&body=${body}`;
+            
+            window.location.href = mailToLink;
         });
     </script>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-slate-950 full-width py-12 px-6 border-t border-red-900/10 flat">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-8 max-w-screen-2xl mx-auto">
+            <div class="flex flex-col gap-4">
+                <span class="font-bold text-slate-900 dark:text-white font-headline">Autonomy Association, LLC.</span>
+                <p class="font-label text-xs text-slate-500 uppercase">© 2024 Autonomy Association, LLC. | ALL RIGHTS
+                    RESERVED</p>
+            </div>
+            <nav class="flex flex-col sm:flex-row gap-6 font-label uppercase text-xs">
+                <a class="text-slate-500 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-400 underline decoration-red-600/30 transition-all duration-200 ease-in-out"
+                    href="#">PRIVACY POLICY</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-400 underline decoration-red-600/30 transition-all duration-200 ease-in-out"
+                    href="#">TERMS OF SERVICE</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-400 underline decoration-red-600/30 transition-all duration-200 ease-in-out"
+                    href="#">DATA GOVERNANCE</a>
+            </nav>
+        </div>
+    </footer>
 </body>
+
 </html>
