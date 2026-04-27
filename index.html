@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomy Local | 次世代の自立分散型ローカルネットワーク</title>
+    <meta name="description" content="Autonomy Localは、地域社会の自律性を高めるためのデジタル基盤を提供します。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <div class="logo">AUTONOMY LOCAL</div>
+            <nav>
+                <!-- Navigation links could go here -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            
+            <div class="container hero-content fade-in">
+                <h1>未来を自らの手で、<br>地域から。</h1>
+                <p>私たちは、テクノロジーを通じてコミュニティのレジリエンスを強化し、<br>真に自律したローカル経済の創出を目指しています。</p>
+                <div class="cta">
+                    <a href="#" class="btn btn-primary">プロジェクトを見る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Autonomy Local. Built for the future.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple entry animation trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.querySelector('.hero-content');
+            content.style.opacity = '0';
+            setTimeout(() => {
+                content.classList.add('fade-in');
+                content.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
