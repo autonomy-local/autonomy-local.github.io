@@ -355,12 +355,16 @@
             const message = document.getElementById('form-message').value;
             
             const subject = encodeURIComponent(`Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const body = encodeURIComponent(`Name: ${name}\r\nEmail: ${email}\r\n\r\nMessage:\r\n${message}`);
             
-            // Replace with your actual inquiry email address
             const mailToLink = `mailto:info@autonomy-association.co.jp?subject=${subject}&body=${body}`;
             
-            window.location.href = mailToLink;
+            // より確実にメーラーを起動するため、aタグを生成してクリックを発火
+            const a = document.createElement('a');
+            a.href = mailToLink;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         });
     </script>
     <!-- Footer -->
